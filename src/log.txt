@@ -1,4 +1,1 @@
-admin,admin,1,0,3
-egehuriel,ege,3,108800,0
-test,test,4,405200,1
-testf,testf,5,311300,0
+admin,admin,5,232300,82

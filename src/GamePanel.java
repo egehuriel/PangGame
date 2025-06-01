@@ -135,6 +135,9 @@ public class GamePanel extends JPanel {
         else if(current.level == 5) level5();
         }
         startcountdowntimer.start();
+        if(current.getUsername().equals("admin")){
+            player.live = 100;
+        }
     }
     public void paint(Graphics g){
         super.paintComponent(g);
@@ -151,8 +154,17 @@ public class GamePanel extends JPanel {
             g.drawImage(level5background,0,0,getWidth(),getHeight(),null);
         }
         g.setFont(font1.deriveFont(40f));
-        g.setColor(Color.WHITE);
+        g.setColor(Color.BLACK);
         g.drawString("TIME :" + time, 630,60);
+        g.setColor(Color.WHITE);
+        g.drawString("TIME :" + time, 628,62);
+        if(level == 5){
+            g.setFont(font1.deriveFont(40f));
+            g.setColor(Color.WHITE);
+            g.drawString("TIME :" + time, 630,60);
+            g.setColor(Color.BLACK);
+            g.drawString("TIME :" + time, 628,62);
+        }
         player.draw(g);
         for(Arrow arrow : arrow){
             arrow.draw(g);
@@ -295,7 +307,7 @@ public class GamePanel extends JPanel {
             gamefinishedsoundeffect();
             stopmusic();
             repaint();
-            Timer finish = new Timer(3000, e -> {
+            Timer finish = new Timer(5000, e -> {
                 int option = JOptionPane.showOptionDialog(this, "CONGRATULATIONS!\nYOU FINISHED THE GAME!", "GAME COMPLETED", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, resizeimage, new String[]{"GO BACK TO MENU", "EXIT"}, "GO BACK TO MENU");
                 if (option == 0) {
                     SwingUtilities.getWindowAncestor(this).dispose(); 
@@ -409,7 +421,7 @@ public class GamePanel extends JPanel {
         if(clip1 != null && clip1.isRunning()){
             clip1.stop();
         }
-        if(clip2 != null && clip3.isRunning()){
+        if(clip2 != null && clip2.isRunning()){
             clip2.stop();
         }
         if(clip4 != null && clip4.isRunning()){
