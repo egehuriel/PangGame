@@ -59,7 +59,7 @@ public class Player {
     }
 
     public void moveright(){
-        x = x + 15;
+        x = x + 20;
         if(shotting == false){
             walk = true;
             direction = true;
@@ -67,7 +67,7 @@ public class Player {
         }
     }
     public void moveleft(){
-        x = x - 15;
+        x = x - 20;
         if(shotting==false){
             walk = true;
             direction = false;

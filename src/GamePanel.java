@@ -37,6 +37,7 @@ public class GamePanel extends JPanel {
     boolean levelupa = false;
     boolean pause = false;
     boolean gamefinish = false;
+    boolean mute = false;
 
 
 
@@ -76,6 +77,17 @@ public class GamePanel extends JPanel {
                         timer.start();
                     }
                     repaint();
+                }else if (key == KeyEvent.VK_M) {
+                    mute = !mute;
+                    if(mute == true){
+                        stopmusic();
+                    }else{
+                        if(level == 1) level1backgroundmusic();
+                        else if(level == 2) level2backgroundmusic();
+                        else if(level == 3) level3backgroundmusic();
+                        else if(level == 4) level4backgroundmusic();
+                        else if(level == 5) level5backgroundmusic();
+                    }
                 }
             }
             @Override
@@ -88,6 +100,8 @@ public class GamePanel extends JPanel {
                     player.walk = false;
                 }
             }
+
+            
         });
         try{
             font1 = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("/ARCADE_I.TTF")).deriveFont(20f);
@@ -135,8 +149,12 @@ public class GamePanel extends JPanel {
         else if(current.level == 5) level5();
         }
         startcountdowntimer.start();
+        try {
         if(current.getUsername().equals("admin")){
             player.live = 100;
+        }
+        } catch (Exception e) {
+            System.err.println("gormezden gel (admin test)");
         }
     }
     public void paint(Graphics g){
