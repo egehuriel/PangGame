@@ -124,14 +124,16 @@ public class GamePanel extends JPanel {
             }
             repaint();
         });
+        if(current == null || level == 0){
+          level = 1; 
+          level1();  
+        } else{
         if(current.level == 1) level1();
-        if(current.level == 2) level2();
-        if(current.level == 3) level3();
-        if(current.level == 4) level4();
-        if(current.level == 5) level5();
-        if(current == null) level1();
-        if(current.level == 0) level1();
-        startsoundeffect();
+        else if(current.level == 2) level2();
+        else if(current.level == 3) level3();
+        else if(current.level == 4) level4();
+        else if(current.level == 5) level5();
+        }
         startcountdowntimer.start();
     }
     public void paint(Graphics g){

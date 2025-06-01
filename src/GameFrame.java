@@ -22,7 +22,7 @@ public class GameFrame extends JFrame{
         Image smallimage = icon.getImage().getScaledInstance(64, 64, Image.SCALE_DEFAULT);
         ImageIcon resizeimage = new ImageIcon(smallimage);
         setIconImage(resizeimage.getImage());
-        setSize(800,700);
+        setSize(800,650);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
@@ -287,7 +287,7 @@ public class GameFrame extends JFrame{
 
     }
     void aboutpage(){
-        JOptionPane.showMessageDialog(this, "Game Created by: Ege Huriel 202030702114 ege.huriel@std.yeditepe.edu.tr");
+        JOptionPane.showMessageDialog(this, "Game Created by:\nEge Huriel (202030702114) \nege.huriel@std.yeditepe.edu.tr", "ABOUT", JOptionPane.PLAIN_MESSAGE, resizeimage);
 
     }
 }
