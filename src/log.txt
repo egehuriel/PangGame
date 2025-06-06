@@ -1,1 +1,1 @@
-admin,admin,5,232300,82
+admin,admin,5,197700,72
