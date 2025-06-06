@@ -23,7 +23,7 @@ Destroy bouncing bubbles, survive through the chaos, and progress through 5 incr
 - `Member.java`: Holds player data (level, score, lives)  
 - `User.java`: Login, register, save/load from `log.txt`  
 - `log.txt`: User data file
-- `assetes`: Are located in /src file 
+- `assets`: Are located in /src file 
 
 ## Controls
 
