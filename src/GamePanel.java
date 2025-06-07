@@ -294,7 +294,7 @@ public class GamePanel extends JPanel {
     
             levelupsoundeffect();
             Timer leveluptimer = new Timer(3000, e -> {
-                JOptionPane.showMessageDialog(this, "LEVEL "+ level + " COMPLETED! -- LEVEL " + (level + 1) + " STARTS!!", "LEVEL UP!!", JOptionPane.INFORMATION_MESSAGE); 
+                JOptionPane.showMessageDialog(this, "LEVEL "+ level + " COMPLETED! -- LEVEL " + (level + 1) + " STARTS!!", "LEVEL UP!!", JOptionPane.INFORMATION_MESSAGE, resizeimage); 
                 level++;
                 time = 100;
                 player.x = 100;
