@@ -15,6 +15,10 @@ public class GamePanel extends JPanel {
     Clip clip4;
     Clip clip5;
     Clip clip6;
+    Clip clip7;
+    Clip clip8;
+    Clip clip9;
+    Clip clip10;
     int time = 100;
     int fps = 0;
     Player player;
@@ -81,6 +85,17 @@ public class GamePanel extends JPanel {
                     mute = !mute;
                     if(mute == true){
                         stopmusic();
+                    }else{
+                        if(level == 1) level1backgroundmusic();
+                        else if(level == 2) level2backgroundmusic();
+                        else if(level == 3) level3backgroundmusic();
+                        else if(level == 4) level4backgroundmusic();
+                        else if(level == 5) level5backgroundmusic();
+                    }
+                }else if (key == KeyEvent.VK_N) {
+                    mute = !mute;
+                    if(mute == true){
+                        stopsound();
                     }else{
                         if(level == 1) level1backgroundmusic();
                         else if(level == 2) level2backgroundmusic();
@@ -539,21 +554,23 @@ public class GamePanel extends JPanel {
     }
 
     void startsoundeffect(){
+
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource("/startsoundeffect.wav"));
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
+            AudioInputStream audioinputStream = AudioSystem.getAudioInputStream(getClass().getResource("/startsoundeffect.wav"));
+            clip7 = AudioSystem.getClip();
+            clip7.open(audioinputStream);
+            clip7.loop(Clip.LOOP_CONTINUOUSLY);
+            clip7.start();
         } catch (Exception e) {
-            System.err.println("ses hata start geri sayime efetki");
+            System.err.println("level1 arkaplandaki muzik hata ");
         }
     }
     void bubblepopsoundeffect(){
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource("/bubblepopsoundeffect.wav"));
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
+            clip8 = AudioSystem.getClip();
+            clip8.open(audioInputStream);
+            clip8.start();
         } catch (Exception e) {
             System.err.println("ses hata bubble pop sound effect");
         }
@@ -562,9 +579,9 @@ public class GamePanel extends JPanel {
     void losinglivesoundeffect(){
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource("/losinglife.wav"));
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
+            clip9 = AudioSystem.getClip();
+            clip9.open(audioInputStream);
+            clip9.start();
         } catch (Exception e) {
             System.err.println("hata can kaybi ses efekti");
         }
@@ -620,9 +637,9 @@ public class GamePanel extends JPanel {
     void levelupsoundeffect(){
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource("/levelupsoundeffect.wav"));
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
+            clip10 = AudioSystem.getClip();
+            clip10.open(audioInputStream);
+            clip10.start();
         } catch (Exception e) {
             System.err.println("hata mario levelup ses efekti");
         }
@@ -669,6 +686,28 @@ public class GamePanel extends JPanel {
             clip5.stop();
         if(clip6 != null && clip6.isRunning())
             clip6.stop();
+    }
+    void stopsound(){
+                if(clip1 != null && clip1.isRunning()) 
+            clip1.stop();
+        if(clip2 != null && clip2.isRunning()) 
+            clip2.stop();
+        if(clip3 != null && clip3.isRunning()) 
+            clip3.stop();
+        if(clip4 != null && clip4.isRunning()) 
+            clip4.stop();
+        if(clip5 != null && clip5.isRunning()) 
+            clip5.stop();
+        if(clip6 != null && clip6.isRunning())
+            clip6.stop();
+        if(clip7 != null && clip7.isRunning())
+            clip7.stop();
+        if(clip8 != null && clip8.isRunning())
+            clip8.stop();
+        if(clip9 != null && clip9.isRunning())
+            clip9.stop();
+        if(clip10 != null && clip10.isRunning())
+            clip10.stop();
     }
 
     void gamefinishedsoundeffect(){
