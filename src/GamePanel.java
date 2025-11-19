@@ -688,7 +688,7 @@ public class GamePanel extends JPanel {
             clip6.stop();
     }
     void stopsound(){
-                if(clip1 != null && clip1.isRunning()) 
+        if(clip1 != null && clip1.isRunning()) 
             clip1.stop();
         if(clip2 != null && clip2.isRunning()) 
             clip2.stop();
