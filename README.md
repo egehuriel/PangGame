@@ -55,5 +55,5 @@ Free to use, modify, or distribute.
 ## Credits
 
 Created by: Ege Huriel  
-Yeditepe University – CSE212 Term Project  
+Yeditepe University – CSE 212 Term Project  
 Email: ege.huriel@gmail.com
