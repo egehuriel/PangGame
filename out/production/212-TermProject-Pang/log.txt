@@ -1,2 +1,0 @@
-admin,admin,1,0,3
-user,123,1,0,3
